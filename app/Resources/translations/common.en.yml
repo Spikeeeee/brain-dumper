@@ -1,0 +1,4 @@
+common:
+    navigation:
+        logout:
+            label: Log Out

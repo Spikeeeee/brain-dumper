@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Brain Dumper{% endblock %}</title>
+        {% block stylesheets %}
+            {% include "::components/_stylesheets.html.twig" %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    <div id="wrap">
+        <header id="main-header">
+            <nav>
+                {% block navigation %}
+                    {% include "::components/_mainMenu.html.twig" %}
+                {% endblock %}
+            </nav>
+        </header>
+
+        <div id="flash-messages">
+            {% for type, messages in app.session.flashBag.all() %}
+                {% for message in messages %}
+                    <div class="alert alert-dismissable alert-{{ type }}">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span class="fa fa-times"></span>
+                        </button>
+
+                        <p>
+                            {{ message|raw }}
+                        </p>
+                    </div>
+                    <div class="cb"></div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+        <main class="main-content">
+            {% block body %}{% endblock %}
+        </main>
+
+        <div id="push"></div>
+    </div>
+
+    <footer id="main-footer">
+        {% include "::components/_footer.html.twig" %}
+    </footer>
+
+    {% block javascripts %}
+        {% include "::components/_javascripts.html.twig" %}
+    {% endblock %}
+    </body>
+</html>

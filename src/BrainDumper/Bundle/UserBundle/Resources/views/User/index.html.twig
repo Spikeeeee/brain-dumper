@@ -1,1 +1,7 @@
-Hello {{ name }}!
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Test{% endblock %}
+
+{% block body %}
+    Hello {{ name }}!
+{% endblock %}
