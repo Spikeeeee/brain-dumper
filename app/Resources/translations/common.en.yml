@@ -1,4 +1,15 @@
 common:
     navigation:
-        logout:
-            label: Log Out
+        profile:
+            label: Profile
+            account.label: Account
+            settings.label: Settings
+            logout.label: Log Out
+        agile-board.label: Agile Board
+        agenda.label: Agenda
+        mood-graph.label: Mood Graph
+        guardian:
+            label: Guardian
+            continuous-integration.label: Continuous Integration
+            probes.label: Probes
+        one2one.label: One 2 One

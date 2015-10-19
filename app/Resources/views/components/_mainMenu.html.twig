@@ -1,7 +1,42 @@
-{% trans_default_domain "layout" %}
+{% trans_default_domain "common" %}
 
 <ul>
     <li>
-        <a href="{{ path('fos_user_security_logout') }}">{{ 'common.navigation.logout.label'|trans }}</a>
+        <a href="{{ path('agile_board_index') }}">{{ 'common.navigation.agile-board.label'|trans }}</a>
+    </li>
+    <li>
+        <a href="{{ path('agenda_index') }}">{{ 'common.navigation.agenda.label'|trans }}</a>
+    </li>
+    <li>
+        <a href="{{ path('mood_index') }}">{{ 'common.navigation.mood-graph.label'|trans }}</a>
+    </li>
+    <li>
+        <a href="{{ path('guardian_index') }}">{{ 'common.navigation.guardian.label'|trans }}</a>
+        <ul>
+            <li>
+                <a href="#">{{ 'common.navigation.guardian.continuous-integration.label'|trans }}</a>
+            </li>
+            <li>
+                <a href="#">{{ 'common.navigation.guardian.probes.label'|trans }}</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="{{ path('one_2_one_index') }}">{{ 'common.navigation.one2one.label'|trans }}</a>
+    </li>
+    <li>
+        <a href="{{ path('user_account') }}">{{ 'common.navigation.profile.label'|trans }}</a>
+        <ul>
+            <li>
+                <a href="{{ path('user_account') }}">{{ 'common.navigation.profile.account.label'|trans }}</a>
+            </li>
+            <li>
+                <a href="{{ path('user_settings') }}">{{ 'common.navigation.profile.settings.label'|trans }}</a>
+            </li>
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">{{ 'common.navigation.profile.logout.label'|trans }}</a>
+            </li>
+        </ul>
+
     </li>
 </ul>

@@ -14,11 +14,24 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class UserController extends Controller
 {
     /**
-     * @Route("/hello")
+     * @return array
+     *
+     * @Route(name="user_account", path="/account")
      * @Template()
      */
-    public function indexAction()
+    public function accountAction()
     {
-        return array('name' => $this->getUser()->getUsername());
+        return array();
+    }
+
+    /**
+     * @return array
+     *
+     * @Route(name="user_settings", path="/settings")
+     * @Template()
+     */
+    public function settingsAction()
+    {
+        return array();
     }
 }

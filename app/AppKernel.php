@@ -26,6 +26,11 @@ class AppKernel extends Kernel
             new CuteNinja\CommonBundle\CuteNinjaCommonBundle(),
 
             new BrainDumper\Bundle\UserBundle\BrainDumperUserBundle(),
+            new BrainDumper\Bundle\MoodGraphBundle\BrainDumperMoodGraphBundle(),
+            new BrainDumper\Bundle\AgileBoardBundle\BrainDumperAgileBoardBundle(),
+            new BrainDumper\Bundle\AgendaBundle\BrainDumperAgendaBundle(),
+            new BrainDumper\Bundle\GuardianBundle\BrainDumperGuardianBundle(),
+            new BrainDumper\Bundle\One2OneBundle\BrainDumperOne2OneBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

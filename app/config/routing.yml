@@ -1,7 +1,32 @@
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+brain_dumper_one2_one:
+    resource: "@BrainDumperOne2OneBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+brain_dumper_guardian:
+    resource: "@BrainDumperGuardianBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+brain_dumper_agenda:
+    resource: "@BrainDumperAgendaBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 brain_dumper_user:
     resource: "@BrainDumperUserBundle/Controller/"
     type:     annotation
-    prefix:   /users
+    prefix:   /
+
+brain_dumper_mood_graph:
+    resource: "@BrainDumperMoodGraphBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+brain_dumper_agile_board:
+    resource: "@BrainDumperAgileBoardBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
