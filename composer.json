@@ -7,6 +7,12 @@
             "": "src/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/cute-ninja/common-bundle"
+        }
+    ],
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.7.*",
@@ -17,10 +23,19 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "jms/serializer-bundle": "1.0.*",
+        "friendsofsymfony/rest-bundle": "1.7.*",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "nelmio/api-doc-bundle": "2.9.*",
+
+        "cuteninja/common-bundle": "dev-master"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "phpunit/phpunit": "4.8.*",
+        "behat/symfony2-extension": "2.1.*",
+        "h4cc/alice-fixtures-bundle": "^0.5.1"
     },
     "scripts": {
         "post-install-cmd": [

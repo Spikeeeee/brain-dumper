@@ -78,3 +78,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: BrainDumper\Bundle\UserBundle\Entity\User
+
+cute_ninja_common:
+    base_dir: src/BrainDumper/Bundle/
+    fixtures:
+        - { resource: UserBundle/Resources/DataFixture/users.yml }

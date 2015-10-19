@@ -1,3 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
+brain_dumper_user:
+    resource: "@BrainDumperUserBundle/Controller/"
     type:     annotation
+    prefix:   /users

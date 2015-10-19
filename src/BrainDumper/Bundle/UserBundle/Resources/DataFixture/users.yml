@@ -1,0 +1,14 @@
+BrainDumper\Bundle\UserBundle\Entity\User:
+    ghriim:
+        username: ghriim
+        usernameCanonical: ghriim
+        email: ghriim@fakemail.com
+        emailCanonical: ghriim@fakemail.com
+        password: azerty
+
+    user{1..100}:
+        username: <current()>
+        usernameCanonical: <current()>
+        email: <email()>
+        emailCanonical: <current()>@fake.com
+        password: <text()>
