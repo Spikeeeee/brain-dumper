@@ -1,0 +1,30 @@
+BrainDumper\Bundle\UserBundle\Entity\Team:
+    ats:
+        acronym: ATS
+        name: Ad-Server & Tracking
+
+    web:
+        acronym: WEB
+        name: Web
+
+    fbo:
+        acronym: FBO
+        name: Front/Back Office
+        parentTeam: @web
+
+    rms:
+        acronym: RMS
+        name: Revenue Management System
+        parentTeam: @web
+
+    prj:
+        acronym: PRJ
+        name: Project
+
+    prd:
+        acronym: PRD
+        name: Production
+
+    prf:
+        acronym: PRF
+        name: Profiling

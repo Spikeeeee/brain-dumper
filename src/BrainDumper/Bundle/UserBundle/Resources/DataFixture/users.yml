@@ -4,8 +4,10 @@ BrainDumper\Bundle\UserBundle\Entity\User:
         email: ghriim@fakemail.com
         enabled: true
         plainPassword: azerty
+        team: @fbo
 
     user{1..100}:
-        username: <current()>
+        username: <name()>
         email: <email()>
         plainPassword: azerty
+        team: @<randomElement(['ats', 'web', 'fbo', 'rms', 'prj', 'prd', 'prf'])>

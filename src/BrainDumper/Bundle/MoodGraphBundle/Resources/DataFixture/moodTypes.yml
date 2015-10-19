@@ -1,0 +1,11 @@
+BrainDumper\Bundle\MoodGraphBundle\Entity\MoodType:
+    overall:
+        name: Overall
+    productivity:
+        name: Productivity
+    internal-project:
+        name: Internal Project
+    product-project:
+        name: Product Project
+    planning:
+        name: Planning Visibility

@@ -87,4 +87,6 @@ fos_user:
 cute_ninja_common:
     base_dir: src/BrainDumper/Bundle/
     fixtures:
+        - { resource: UserBundle/Resources/DataFixture/teams.yml }
         - { resource: UserBundle/Resources/DataFixture/users.yml }
+        - { resource: MoodGraphBundle/Resources/DataFixture/moodTypes.yml }

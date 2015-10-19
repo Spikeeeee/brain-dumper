@@ -16,22 +16,17 @@ class UserController extends Controller
     /**
      * @return array
      *
-     * @Route(name="user_account", path="/account")
+     * @Route(name="user_list", path="/users")
      * @Template()
      */
-    public function accountAction()
+    public function listAction()
     {
-        return array();
-    }
+        $userRepository = $this->getDoctrine()->getEntityManager()->getRepository("BrainDumperUserBundle:User");
 
-    /**
-     * @return array
-     *
-     * @Route(name="user_settings", path="/settings")
-     * @Template()
-     */
-    public function settingsAction()
-    {
-        return array();
+        $users = $userRepository->findAll();
+
+        return array(
+            'users' => $users
+        );
     }
 }

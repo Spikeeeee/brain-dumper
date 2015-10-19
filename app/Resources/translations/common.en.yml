@@ -12,4 +12,5 @@ common:
             label: Guardian
             continuous-integration.label: Continuous Integration
             probes.label: Probes
+        teams.label: Teams
         one2one.label: One 2 One

@@ -6,18 +6,18 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 
 /**
- * Class UserRepository
+ * Class TeamRepository
  *
  * @package BrainDumper\Bundle\UserBundle\Repository
  */
-class UserRepository  extends EntityRepository
+class TeamRepository  extends EntityRepository
 {
     /**
      * @return QueryBuilder
      */
     public function getQueryBuilder()
     {
-        $queryBuilder = $this->createQueryBuilder('user');
+        $queryBuilder = $this->createQueryBuilder('team');
 
         return $queryBuilder;
     }

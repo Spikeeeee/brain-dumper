@@ -1,0 +1,15 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Users{% endblock %}
+
+{% block body %}
+    <table>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.team.name }}</td>
+            <td>{{ user.enabled ? "active" : "inactive" }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
