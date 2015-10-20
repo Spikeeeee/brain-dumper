@@ -2,6 +2,7 @@
 
 namespace BrainDumper\Bundle\UserBundle\Repository;
 
+use BrainDumper\Bundle\UserBundle\Entity\Team;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 
@@ -22,6 +23,9 @@ class TeamRepository  extends EntityRepository
         return $queryBuilder;
     }
 
+    /**
+     * @return Team[]
+     */
     public function getForList()
     {
         $queryBuilder = $this->getQueryBuilder();

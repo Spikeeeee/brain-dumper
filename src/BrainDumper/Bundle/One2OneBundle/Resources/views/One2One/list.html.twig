@@ -1,0 +1,33 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - One 2 One{% endblock %}
+
+{% block body %}
+
+    {% if one2oneHostedListis not empty %}
+        <div>
+            <h3>Hosted</h3>
+            {% for one2one in one2oneHostedList %}
+                <div>
+                    <h3>{{ one2one.subject.username }}</h3>
+
+                    <span>{{ one2one.plannedOn|date('d/m/Y') }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div>
+        <h3>Subject</h3>
+        {% for one2one in one2oneSubjectList %}
+            <div>
+                <h3>{{ one2one.host.username }}</h3>
+
+                <span>{{ one2one.plannedOn|date('d/m/Y') }}</span>
+            </div>
+        {% else %}
+            {{ 'one2one.subject.list.empty'|trans }}
+        {% endfor %}
+    </div>
+
+{% endblock %}

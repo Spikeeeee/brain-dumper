@@ -89,4 +89,5 @@ cute_ninja_common:
     fixtures:
         - { resource: UserBundle/Resources/DataFixture/teams.yml }
         - { resource: UserBundle/Resources/DataFixture/users.yml }
+        - { resource: One2OneBundle/Resources/DataFixture/one2ones.yml }
         - { resource: MoodGraphBundle/Resources/DataFixture/moodTypes.yml }

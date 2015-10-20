@@ -27,6 +27,12 @@ class UserController extends Controller
      */
     public function saveAction(User $user = null)
     {
+        if(!$user) {
+            $user = new User();
+        }
 
+        return array(
+            'user' => $user
+        );
     }
 }

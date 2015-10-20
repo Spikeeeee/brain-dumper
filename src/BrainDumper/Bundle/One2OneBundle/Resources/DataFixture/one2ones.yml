@@ -1,0 +1,60 @@
+BrainDumper\Bundle\One2OneBundle\Entity\One2One:
+    qvignierWithNdreux1:
+        host: @qvignier
+        subject: @ndreux
+        plannedOn: <dateTime('2015-30-09')>
+
+    qvignierWithNdreux2:
+        host: @qvignier
+        subject: @ndreux
+        plannedOn: <dateTime('2015-10-14')>
+
+    qvignierWithNdreux3:
+        host: @qvignier
+        subject: @ndreux
+        plannedOn: <dateTime('2015-10-28')>
+
+    qvignierWithNdreux4:
+        host: @qvignier
+        subject: @ndreux
+        plannedOn: <dateTime('2015-11-11')>
+
+    jpierrontWithQvignier1:
+        host: @jpierront
+        subject: @qvignier
+        plannedOn: <dateTime('2015-09-23')>
+
+    jpierrontWithQvignier2:
+        host: @jpierront
+        subject: @qvignier
+        plannedOn: <dateTime('2015-10-07')>
+
+    jpierrontWithQvignier3:
+        host: @jpierront
+        subject: @qvignier
+        plannedOn: <dateTime('2015-10-21')>
+
+    jpierrontWithQvignier4:
+        host: @jpierront
+        subject: @qvignier
+        plannedOn: <dateTime('2015-11-04')>
+
+    jpierrontWithDbutton1:
+        host: @jpierront
+        subject: @dbutton
+        plannedOn: <dateTime('2015-09-23')>
+
+    jpierrontWithDbutton2:
+        host: @jpierront
+        subject: @dbutton
+        plannedOn: <dateTime('2015-10-07')>
+
+    jpierrontWithDbutton3:
+        host: @jpierront
+        subject: @dbutton
+        plannedOn: <dateTime('2015-10-21')>
+
+    jpierrontWithDbutton4:
+        host: @jpierront
+        subject: @dbutton
+        plannedOn: <dateTime('2015-11-04')>

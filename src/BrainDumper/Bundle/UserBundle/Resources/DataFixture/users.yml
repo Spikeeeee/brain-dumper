@@ -1,20 +1,84 @@
 BrainDumper\Bundle\UserBundle\Entity\User:
-    ghriim:
-        username: ghriim
-        email: ghriim@fakemail.com
+    qvignier:
+        username: qvignier
+        email: quentin.vignier@cmcm.com
         enabled: true
         plainPassword: azerty
         team: @fbo
 
-    user{1..50}:
-        username: <name()>
-        email: <email()>
-        plainPassword: azerty
-        team: @<randomElement(['ats', 'web', 'fbo', 'rms', 'prj', 'prd', 'prf'])>
-
-    user{51..100}:
-        username: <name()>
-        email: <email()>
+    ndreux:
+        username: ndreux
+        email: nicolas.dreux@cmcm.com
         enabled: true
         plainPassword: azerty
-        team: @<randomElement(['ats', 'web', 'fbo', 'rms', 'prj', 'prd', 'prf'])>
+        team: @fbo
+
+    dbutton:
+        username: dbutton
+        email: damien.button@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @rms
+
+    tngataly:
+        username: tngataly
+        email: thomas.ngataly@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @rms
+
+    jpierront:
+        username: jpierront
+        email: julient.pierront@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @web
+
+    nponcet:
+        username: nponcet
+        email: noemie.poncet@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @web
+
+    bdarnault:
+        username: bdarnault
+        email: benjamin.darnault@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @ats
+
+    jponce:
+        username: jponce
+        email: julien.ponce@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @ats
+
+    cpignier:
+        username: cpignier
+        email: chloe.pignier@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @prj
+
+    cperigaud:
+        username: cperigaud
+        email: camille.cperigaud@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @prj
+
+    metienne:
+        username: metienne
+        email: matthias.etienne@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @prf
+
+    plelevier:
+        username: plelevier
+        email: pascal.lelevier@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @prf

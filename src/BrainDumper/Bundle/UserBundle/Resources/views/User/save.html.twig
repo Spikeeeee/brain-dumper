@@ -1,0 +1,12 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - {{ user.isNew ? 'Add User' : user.username }}{% endblock %}
+
+{% block body %}
+    <h2>
+        {{ user.isNew ? 'Add User' : user.username }}
+    </h2>
+    <div>
+
+    </div>
+{% endblock %}

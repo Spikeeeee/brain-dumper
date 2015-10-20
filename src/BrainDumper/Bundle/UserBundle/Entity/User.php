@@ -98,4 +98,12 @@ class User extends FOSUser
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function isNew()
+    {
+        return empty($this->getId());
+    }
 }
