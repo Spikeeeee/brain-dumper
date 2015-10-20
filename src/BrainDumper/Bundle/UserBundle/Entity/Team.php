@@ -21,37 +21,42 @@ class Team
     const STATUS_ACTIVE = 'active';
     const STATUS_INACTIVE = 'inactive';
 
+
     /**
+     * @var string $acronym
+     *
+     * @ORM\Column(name="acronym", type="string", length=25, nullable=false, unique = true)
      * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Length(min="2", max="25")
      */
-    protected $id;
+    protected $acronym;
+
+    /**
+     * @var User $leader
+     *
+     * @ORM\ManyToOne(targetEntity="BrainDumper\Bundle\UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="leader_id", referencedColumnName="id", nullable=true)
+     */
+    protected $leader;
 
     /**
      * @var Team $parentTeam
      *
      * @ORM\ManyToOne(targetEntity="BrainDumper\Bundle\UserBundle\Entity\Team")
-     * @ORM\JoinColumn(name="parent_team_id", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="parent_team_id", referencedColumnName="acronym", nullable=true)
+     *
+     * @Assert\Type(type="BrainDumper\Bundle\UserBundle\Entity\Team")
      */
     protected $parentTeam;
 
     /**
      * @var Team[] $subTeams
      *
-     * @ORM\OneToMany(targetEntity="BrainDumper\Bundle\UserBundle\Entity\Team", mappedBy="parentTeam", indexBy="id")
+     * @ORM\OneToMany(targetEntity="BrainDumper\Bundle\UserBundle\Entity\Team", mappedBy="parentTeam", indexBy="acronym")
      */
     protected $subTeams;
-
-    /**
-     * @var string $acronym
-     *
-     * @ORM\Column(name="acronym", type="string", length=25, nullable=false)
-     *
-     * @Assert\NotBlank()
-     * @Assert\Length(min="2", max="25")
-     */
-    protected $acronym;
 
     /**
      * @var string $name
@@ -74,21 +79,41 @@ class Team
     protected $status = self::STATUS_ACTIVE;
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getId()
+    public function getAcronym()
     {
-        return $this->id;
+        return $this->acronym;
     }
 
     /**
-     * @param mixed $id
+     * @param string $acronym
      *
      * @return $this
      */
-    public function setId($id)
+    public function setAcronym($acronym)
     {
-        $this->id = $id;
+        $this->acronym = $acronym;
+
+        return $this;
+    }
+
+    /**
+     * @return User
+     */
+    public function getLeader()
+    {
+        return $this->leader;
+    }
+
+    /**
+     * @param User $leader
+     *
+     * @return $this
+     */
+    public function setLeader($leader)
+    {
+        $this->leader = $leader;
 
         return $this;
     }
@@ -129,26 +154,6 @@ class Team
     public function setSubTeams($subTeams)
     {
         $this->subTeams = $subTeams;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAcronym()
-    {
-        return $this->acronym;
-    }
-
-    /**
-     * @param string $acronym
-     *
-     * @return $this
-     */
-    public function setAcronym($acronym)
-    {
-        $this->acronym = $acronym;
 
         return $this;
     }

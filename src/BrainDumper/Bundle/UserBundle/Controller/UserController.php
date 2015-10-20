@@ -2,6 +2,8 @@
 
 namespace BrainDumper\Bundle\UserBundle\Controller;
 
+use BrainDumper\Bundle\UserBundle\Entity\Team;
+use BrainDumper\Bundle\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -14,19 +16,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class UserController extends Controller
 {
     /**
+     * @param User $user
+     *
      * @return array
      *
-     * @Route(name="user_list", path="/users")
+     * @Route(name="user_create", path="/users/save")
+     * @Route(name="user_edit", path="/users/save/{id}")
+     *
      * @Template()
      */
-    public function listAction()
+    public function saveAction(User $user = null)
     {
-        $userRepository = $this->getDoctrine()->getEntityManager()->getRepository("BrainDumperUserBundle:User");
 
-        $users = $userRepository->findAll();
-
-        return array(
-            'users' => $users
-        );
     }
 }

@@ -1,0 +1,16 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Teams{% endblock %}
+
+{% block body %}
+    <table>
+        {% for team in teams %}
+            <tr>
+                <td>
+                    <a href="{{ path('team_details', {'id': team.acronym}) }}">{{ team.name }}</a>
+                </td>
+                <td>{{ team.status }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

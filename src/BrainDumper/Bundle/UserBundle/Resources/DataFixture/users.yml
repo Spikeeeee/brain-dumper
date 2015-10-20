@@ -6,8 +6,15 @@ BrainDumper\Bundle\UserBundle\Entity\User:
         plainPassword: azerty
         team: @fbo
 
-    user{1..100}:
+    user{1..50}:
         username: <name()>
         email: <email()>
+        plainPassword: azerty
+        team: @<randomElement(['ats', 'web', 'fbo', 'rms', 'prj', 'prd', 'prf'])>
+
+    user{51..100}:
+        username: <name()>
+        email: <email()>
+        enabled: true
         plainPassword: azerty
         team: @<randomElement(['ats', 'web', 'fbo', 'rms', 'prj', 'prd', 'prf'])>

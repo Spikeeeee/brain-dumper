@@ -21,4 +21,14 @@ class TeamRepository  extends EntityRepository
 
         return $queryBuilder;
     }
+
+    public function getForList()
+    {
+        $queryBuilder = $this->getQueryBuilder();
+
+        $queryBuilder->addOrderBy('team.status');
+        $queryBuilder->addOrderBy('team.name');
+
+        return $queryBuilder->getQuery()->getResult();
+    }
 }

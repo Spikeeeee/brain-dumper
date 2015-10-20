@@ -1,0 +1,21 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - {{ team.acronym|upper }}{% endblock %}
+
+{% block body %}
+    <h2>{{ team.acronym|upper }} - {{ team.name|capitalize }}</h2>
+    <h3>
+        {{ 'team.leader.label'|trans }}: {{ team.leader ? team.leader.username : 'not defined' }}
+    </h3>
+    <table>
+        {% for user in users %}
+            <tr>
+                <td>
+                    <a href="{{ path('user_create', {'id': user.id}) }}">{{ user.username }}</a>
+                </td>
+                <td>{{ user.enabled ? "active" : "inactive" }}</td>
+                <td>{{ user.currentMood ? user.currentMood.value : 'not defined'}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
