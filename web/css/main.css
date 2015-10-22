@@ -1,0 +1,89 @@
+/**
+ *
+ * LINK
+ *
+ */
+a {
+    text-decoration: none;
+}
+
+/**
+ *
+ * TEXT-ALIGN
+ *
+ */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/**
+ *
+ * MARGIN
+ *
+ */
+.margin-top {
+    margin-top: 1em;
+}
+
+.margin-right {
+    margin-right: 1em;
+}
+
+.margin-bottom {
+    margin-bottom: 1em;
+}
+
+.margin-left {
+    margin-left: 1em;
+}
+
+.margin {
+    margin: 1em;
+}
+
+/**
+ *
+ * LAYOUT
+ *
+ */
+#main-header a {
+    color: grey;
+}
+
+#current-user .avatar {
+    width: 30%;
+}
+#current-user .avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+#current-user .user-information {
+    padding: 0.75em 0 0 1em;
+}
+#current-user .user-information .username {
+    font-weight: 700;
+}
+
+/**
+ *
+ * CARD
+ *
+ */
+.mdl-card .mdl-card__actions h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}

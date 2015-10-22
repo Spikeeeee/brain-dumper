@@ -7,47 +7,59 @@
             {% include "::components/_stylesheets.html.twig" %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-    <div id="wrap">
-        <header id="main-header">
-            <nav>
-                {% block navigation %}
+    <body class="mdl-layout__container">
+        <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header has-drawer is-upgraded">
+            <header id="main-header" class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600 is-casting-shadow">
+                {% block mainMenu %}
                     {% include "::components/_mainMenu.html.twig" %}
                 {% endblock %}
-            </nav>
-        </header>
+            </header>
 
-        <div id="flash-messages">
-            {% for type, messages in app.session.flashBag.all() %}
-                {% for message in messages %}
-                    <div class="alert alert-dismissable alert-{{ type }}">
-                        <button type="button" class="close" data-dismiss="alert">
-                            <span class="fa fa-times"></span>
-                        </button>
+            <aside class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+                <header id="current-user">
+                    {% block currentUser %}
+                        {% include "::components/_currentUser.html.twig" %}
+                    {% endblock %}
+                </header>
 
-                        <p>
-                            {{ message|raw }}
-                        </p>
-                    </div>
-                    <div class="cb"></div>
+                <div id="main-feed" class="mdl-navigation mdl-color--blue-grey-800">
+                    {% block mainFeed %}
+                        {% include "::components/_mainFeed.html.twig" %}
+                    {% endblock %}
+                </div>
+            </aside>
+
+            <div id="flash-messages">
+                {% for type, messages in app.session.flashBag.all() %}
+                    {% for message in messages %}
+                        <div class="alert alert-dismissable alert-{{ type }}">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <span class="fa fa-times"></span>
+                            </button>
+
+                            <p>
+                                {{ message|raw }}
+                            </p>
+                        </div>
+                        <div class="cb"></div>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </div>
+
+            <main class="mdl-layout__content mdl-color--grey-100">
+                {% block body %}{% endblock %}
+            </main>
+
+            <footer id="main-footer">
+                {% include "::components/_footer.html.twig" %}
+            </footer>
         </div>
 
-        <main class="main-content">
-            {% block body %}{% endblock %}
-        </main>
-
-        <div id="push"></div>
-    </div>
-
-    <footer id="main-footer">
-        {% include "::components/_footer.html.twig" %}
-    </footer>
-
-    {% block javascripts %}
-        {% include "::components/_javascripts.html.twig" %}
-    {% endblock %}
+        {% block javascripts %}
+            {% include "::components/_javascripts.html.twig" %}
+        {% endblock %}
     </body>
 </html>
