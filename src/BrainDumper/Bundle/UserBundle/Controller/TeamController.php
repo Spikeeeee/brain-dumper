@@ -36,7 +36,7 @@ class TeamController extends Controller
      *
      * @return array
      *
-     * @Route(name="team_details", path="/teams/{id}")
+     * @Route(name="team_details", path="/teams/{acronym}")
      * @Template()
      */
     public function detailsAction(Team $team)

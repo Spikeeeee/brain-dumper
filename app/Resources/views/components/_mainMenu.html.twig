@@ -1,48 +1,27 @@
 {% trans_default_domain "common" %}
 
-<ul>
-    <li>
-        <a href="{{ path('agile_board_index') }}">{{ 'common.navigation.agile-board.label'|trans }}</a>
-    </li>
-    <li>
-        <a href="{{ path('agenda_index') }}">{{ 'common.navigation.agenda.label'|trans }}</a>
-    </li>
-    <li>
-        <a href="{{ path('mood_index') }}">{{ 'common.navigation.mood-graph.label'|trans }}</a>
-    </li>
-    <li>
-        <a href="#">{{ 'common.navigation.guardian.label'|trans }}</a>
-        <ul>
-            <li>
-                <a href="{{ path('guardian_index') }}">{{ 'common.navigation.guardian.continuous-integration.overview.label'|trans }}</a>
-            </li>
-            <li>
-                <a href="#">{{ 'common.navigation.guardian.continuous-integration.label'|trans }}</a>
-            </li>
-            <li>
-                <a href="#">{{ 'common.navigation.guardian.probes.label'|trans }}</a>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <a href="{{ path('team_list') }}">{{ 'common.navigation.teams.label'|trans }}</a>
-    </li>
-    <li>
-        <a href="{{ path('one_2_one_index') }}">{{ 'common.navigation.one2one.label'|trans }}</a>
-    </li>
-    <li>
-        <a href="#">{{ 'common.navigation.profile.label'|trans }}</a>
-        <ul>
-            <li>
-                <a href="{{ path('current_user_account') }}">{{ 'common.navigation.profile.account.label'|trans }}</a>
-            </li>
-            <li>
-                <a href="{{ path('current_user_settings') }}">{{ 'common.navigation.profile.settings.label'|trans }}</a>
-            </li>
-            <li>
-                <a href="{{ path('fos_user_security_logout') }}">{{ 'common.navigation.profile.logout.label'|trans }}</a>
-            </li>
-        </ul>
+<nav class="mdl-layout__header-row">
+    <a class="mdl-navigation__link" href="{{ path('agile_board_index') }}">{{ 'common.navigation.agile-board.label'|trans }}</a>
+    <a class="mdl-navigation__link" href="{{ path('agenda_index') }}">{{ 'common.navigation.agenda.label'|trans }}</a>
+    <a class="mdl-navigation__link" href="{{ path('mood_index') }}">{{ 'common.navigation.mood-graph.label'|trans }}</a>
+    <a class="mdl-navigation__link" href="{{ path('guardian_index') }}">{{ 'common.navigation.guardian.label'|trans }}</a>
+    <a class="mdl-navigation__link" href="{{ path('team_list') }}">{{ 'common.navigation.teams.label'|trans }}</a>
+    <a class="mdl-navigation__link" href="{{ path('one_2_one_index') }}">{{ 'common.navigation.one2one.label'|trans }}</a>
 
-    </li>
-</ul>
+    <div class="mdl-layout-spacer"></div>
+
+    <span class="mdl-button__ripple-container">
+        <span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(24px, 25px);"></span>
+    </span>
+
+    <button id="current-user-configuration"
+            class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+    </button>
+
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="current-user-configuration">
+        <li class="mdl-menu__item"><a href="{{ path('current_user_account') }}">{{ 'common.navigation.profile.account.label'|trans }}</a></li>
+        <li class="mdl-menu__item"><a href="{{ path('current_user_settings') }}">{{ 'common.navigation.profile.settings.label'|trans }}</a></li>
+        <li class="mdl-menu__item"><a href="{{ path('fos_user_security_logout') }}">{{ 'common.navigation.profile.logout.label'|trans }}</a></li>
+    </ul>
+</nav>

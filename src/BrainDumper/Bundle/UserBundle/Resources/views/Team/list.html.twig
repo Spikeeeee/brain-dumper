@@ -3,14 +3,37 @@
 {% block title %}{{ parent() }} - Teams{% endblock %}
 
 {% block body %}
-    <table>
+    <div class="text-right margin-top margin-right">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">add</i> Add a Team
+        </button>
+    </div>
+
+    <div class="mdl-grid">
         {% for team in teams %}
-            <tr>
-                <td>
-                    <a href="{{ path('team_details', {'id': team.acronym}) }}">{{ team.name }}</a>
-                </td>
-                <td>{{ team.status }}</td>
-            </tr>
+            <div class="mdl-cell mdl-cell--3-col mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                    <div class="mood-overview mdl-cell mdl-cell--8-col">
+                        MOOD
+                    </div>
+
+                    <div class="key-numbers mdl-cell mdl-cell--4-col">
+                        <ul>
+                            <li>123</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <h3>
+                        <a href="{{ path('team_details', {'acronym': team.acronym}) }}">
+                            {{ team.name }}
+                        </a>
+                    </h3>
+                    {% if team.leader %}
+                        <span>{{ team.leader.username }}</span>
+                    {% endif %}
+                </div>
+            </div>
         {% endfor %}
-    </table>
+    </div>
 {% endblock %}
