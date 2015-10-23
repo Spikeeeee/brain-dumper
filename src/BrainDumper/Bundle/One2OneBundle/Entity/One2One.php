@@ -44,6 +44,13 @@ class One2One
     protected $subject;
 
     /**
+     * @var Entry[]
+     *
+     * @ORM\OneToMany(targetEntity="BrainDumper\Bundle\One2OneBundle\Entity\Entry", mappedBy="one2one")
+     */
+    protected $entries;
+
+    /**
      * @var \DateTime $plannedOn
      *
      * @ORM\Column(name="planned_on", type="datetime", nullable=false)
@@ -113,6 +120,26 @@ class One2One
     public function setSubject($subject)
     {
         $this->subject = $subject;
+
+        return $this;
+    }
+
+    /**
+     * @return Entry[]
+     */
+    public function getEntries()
+    {
+        return $this->entries;
+    }
+
+    /**
+     * @param Entry[] $entries
+     *
+     * @return $this
+     */
+    public function setEntries($entries)
+    {
+        $this->entries = $entries;
 
         return $this;
     }

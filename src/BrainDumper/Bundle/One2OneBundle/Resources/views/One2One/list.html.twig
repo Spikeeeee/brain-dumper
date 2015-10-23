@@ -4,14 +4,18 @@
 
 {% block body %}
 
-    {% if one2oneHostedListis not empty %}
+    {% if one2oneHostedList is not empty %}
         <div>
             <h3>Hosted</h3>
             {% for one2one in one2oneHostedList %}
                 <div>
-                    <h3>{{ one2one.subject.username }}</h3>
+                    <h3>Subject: {{ one2one.subject.username }}</h3>
 
-                    <span>{{ one2one.plannedOn|date('d/m/Y') }}</span>
+                    <span>
+                        <a href="{{ path('one_2_one_details', {'id': one2one.id}) }}">
+                            {{ one2one.plannedOn|date('d/m/Y') }}
+                        </a>
+                    </span>
                 </div>
             {% endfor %}
         </div>
@@ -21,9 +25,13 @@
         <h3>Subject</h3>
         {% for one2one in one2oneSubjectList %}
             <div>
-                <h3>{{ one2one.host.username }}</h3>
+                <h3>Host: {{ one2one.host.username }}</h3>
 
-                <span>{{ one2one.plannedOn|date('d/m/Y') }}</span>
+                <span>
+                    <a href="{{ path('one_2_one_details', {'id': one2one.id}) }}">
+                        {{ one2one.plannedOn|date('d/m/Y') }}
+                    </a>
+                </span>
             </div>
         {% else %}
             {{ 'one2one.subject.list.empty'|trans }}

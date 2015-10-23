@@ -1,0 +1,18 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - {{ one2one.subject.username }} {% endblock %}
+
+{% block body %}
+    <h2>{{ one2one.subject.username }} - {{ one2one.plannedOn|date('d/m/Y') }}</h2>
+
+    <ul>
+        {% for entry in  one2one.entries %}
+            <li>
+                <p>{{ entry.content|nl2br }}</p>
+                {% if entry.dueDate is not null %}
+                    <span>{{ entry.dueDate|date('d/m/Y') }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -35,11 +35,6 @@ class User extends FOSUser
     protected $team;
 
     /**
-     * {@inheritdoc}
-     */
-    protected $username;
-
-    /**
      * @var Mood $currentMood
      *
      * @ORM\OneToOne(targetEntity="BrainDumper\Bundle\MoodGraphBundle\Entity\Mood")
@@ -48,11 +43,6 @@ class User extends FOSUser
      * @Assert\Type(type="BrainDumper\Bundle\MoodGraphBundle\Entity\Mood")
      */
     protected $currentMood;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $lastLogin;
 
     public function __construct()
     {

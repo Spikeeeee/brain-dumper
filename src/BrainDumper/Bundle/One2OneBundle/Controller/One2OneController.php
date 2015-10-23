@@ -2,6 +2,7 @@
 
 namespace BrainDumper\Bundle\One2OneBundle\Controller;
 
+use BrainDumper\Bundle\One2OneBundle\Entity\One2One;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -27,6 +28,23 @@ class One2OneController extends Controller
         return array(
             'one2oneHostedList'    => $one2oneHostedList,
             'one2oneSubjectList' => $one2oneSubjectList
+        );
+    }
+
+    /**
+     * @param One2One $one2one
+     *
+     * @return array
+     *
+     * @Route(name="one_2_one_details", path="/one-2-one/{id}")
+     * @Method("GET")
+     *
+     * @Template()
+     */
+    public function detailsAction(One2One $one2one)
+    {
+        return array(
+            'one2one' => $one2one
         );
     }
 }
