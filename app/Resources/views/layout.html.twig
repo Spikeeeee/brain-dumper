@@ -11,14 +11,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body class="mdl-layout__container">
-        <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header has-drawer is-upgraded">
-            <header id="main-header" class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600 is-casting-shadow">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header has-drawer is-upgraded">
+            <header id="main-header" class="mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600 is-casting-shadow">
                 {% block mainMenu %}
                     {% include "::components/_mainMenu.html.twig" %}
                 {% endblock %}
             </header>
 
-            <aside class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+            <aside class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
                 <header id="current-user">
                     {% block currentUser %}
                         {% include "::components/_currentUser.html.twig" %}

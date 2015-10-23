@@ -5,33 +5,47 @@
 {% block body %}
 
     {% if one2oneHostedList is not empty %}
-        <div>
-            <h3>Hosted</h3>
+        <h3>Hosted</h3>
+        <div class="mdl-grid">
             {% for one2one in one2oneHostedList %}
-                <div>
-                    <h3>Subject: {{ one2one.subject.username }}</h3>
+                <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                    <a href="{{ path('one_2_one_details', {'id': one2one.id}) }}">
+                        <div class="user-overview user-overview-card mdl-grid">
+                            <div class="avatar">
+                                <img src="{{ asset(one2one.subject.avatar) }}" />
+                            </div>
 
-                    <span>
-                        <a href="{{ path('one_2_one_details', {'id': one2one.id}) }}">
-                            {{ one2one.plannedOn|date('d/m/Y') }}
-                        </a>
-                    </span>
+                            <div class="information">
+                                <h3 class="username margin-top-none">{{ one2one.subject.username }}</h3>
+                                <span>{{ one2one.plannedOn|date('d/m/Y h:m') }}</span>
+
+                                <p class="text-right">
+                                    <span>{{ one2one.subject.team.acronym|upper }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             {% endfor %}
         </div>
     {% endif %}
 
-    <div>
-        <h3>Subject</h3>
+    <h3>Invited</h3>
+    <div class="mdl-grid">
         {% for one2one in one2oneSubjectList %}
-            <div>
-                <h3>Host: {{ one2one.host.username }}</h3>
+            <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                <a href="{{ path('one_2_one_details', {'id': one2one.id}) }}">
+                    <div class="user-overview user-overview-card mdl-grid">
+                        <div class="avatar">
+                            <img src="{{ asset(one2one.host.avatar) }}" />
+                        </div>
 
-                <span>
-                    <a href="{{ path('one_2_one_details', {'id': one2one.id}) }}">
-                        {{ one2one.plannedOn|date('d/m/Y') }}
-                    </a>
-                </span>
+                        <div class="information">
+                            <h3 class="username margin-top-none">{{ one2one.host.username }}</h3>
+                            <span>{{ one2one.plannedOn|date('d/m/Y') }}</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         {% else %}
             {{ 'one2one.subject.list.empty'|trans }}

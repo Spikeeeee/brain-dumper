@@ -33,6 +33,11 @@ class Entry
     protected $one2one;
 
     /**
+     * @var array $tags
+     */
+    protected $tags;
+
+    /**
      * @var string $content
      *
      * @ORM\Column(name="content", type="text", nullable=false)
@@ -86,6 +91,26 @@ class Entry
     public function setOne2one($one2one)
     {
         $this->one2one = $one2one;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
 
         return $this;
     }

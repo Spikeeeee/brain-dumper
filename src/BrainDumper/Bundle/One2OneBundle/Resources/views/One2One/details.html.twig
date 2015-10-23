@@ -3,16 +3,74 @@
 {% block title %}{{ parent() }} - {{ one2one.subject.username }} {% endblock %}
 
 {% block body %}
-    <h2>{{ one2one.subject.username }} - {{ one2one.plannedOn|date('d/m/Y') }}</h2>
 
-    <ul>
+    <div class="mdl-grid">
+        <h2 class="mdl-cell mdl-cell--8-col">{{ one2one.subject.username }} - {{ one2one.plannedOn|date('d/m/Y') }}</h2>
+
+        <div class="mdl-cell mdl-cell--4-col text-right margin-top">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">add</i> Add a Entry
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <div class="mdl-grid">
         {% for entry in  one2one.entries %}
-            <li>
-                <p>{{ entry.content|nl2br }}</p>
-                {% if entry.dueDate is not null %}
-                    <span>{{ entry.dueDate|date('d/m/Y') }}</span>
-                {% endif %}
-            </li>
+            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
+                <p class="padding">
+                    {{ entry.content|nl2br }}
+                </p>
+
+                <div class="mdl-layout-spacer"></div>
+
+                <div class="mdl-grid mdl-card__actions mdl-card--border">
+                    <div class="mdl-cell mdl-cell--3-col">
+                        <span class="text-style-bold">Due date:</span>
+                        {% if entry.dueDate is not null %}
+                            <span>{{ entry.dueDate|date('d/m/Y')}}</span>
+                        {% else %}
+                            <span class="text-style-italic">undefined</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--9-col">
+                        <span class="text-style-bold">Tags:</span>
+                        {% for tag in entry.tags %}
+
+                        {% else %}
+                            <span class="text-style-italic">none</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="mdl-card__menu">
+                    <button id="entry-{{ entry.id }}-configuration"
+                            class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">settings</i>
+                    </button>
+
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="entry-{{ entry.id }}-configuration">
+                        <li class="mdl-menu__item">
+                            <a href="#">
+                                <i class="material-icons">mode edit</i> Send to ToDo
+                            </a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a href="#">
+                                <i class="material-icons">mode edit</i> Edit
+                            </a>
+                        </li>
+                        <li class="mdl-menu__item">
+                            <a href="#">
+                                <i class="material-icons">mode delete</i> Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

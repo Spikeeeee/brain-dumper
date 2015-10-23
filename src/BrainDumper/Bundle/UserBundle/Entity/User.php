@@ -44,6 +44,11 @@ class User extends FOSUser
      */
     protected $currentMood;
 
+    /**
+     * @var string $avatar
+     */
+    protected $avatar;
+
     public function __construct()
     {
         parent::__construct();
@@ -85,6 +90,26 @@ class User extends FOSUser
     public function setCurrentMood($currentMood)
     {
         $this->currentMood = $currentMood;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAvatar()
+    {
+        return $this->avatar ? $this->avatar : 'images/avatar/placeholder.png';
+    }
+
+    /**
+     * @param string $avatar
+     *
+     * @return $this
+     */
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
 
         return $this;
     }

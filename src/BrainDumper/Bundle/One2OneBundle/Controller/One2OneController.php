@@ -23,7 +23,7 @@ class One2OneController extends Controller
         $one2oneRepository = $this->getDoctrine()->getRepository("BrainDumperOne2OneBundle:One2One");
 
         $one2oneHostedList  = $one2oneRepository->getHostedForCurrentUser($this->getUser());
-        $one2oneSubjectList = $one2oneRepository->getSubjectForCurrentUser($this->getUser());
+        $one2oneSubjectList = $one2oneRepository->getInvitedForCurrentUser($this->getUser());
 
         return array(
             'one2oneHostedList'    => $one2oneHostedList,

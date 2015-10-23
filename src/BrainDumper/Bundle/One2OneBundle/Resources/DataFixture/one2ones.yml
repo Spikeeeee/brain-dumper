@@ -19,6 +19,26 @@ BrainDumper\Bundle\One2OneBundle\Entity\One2One:
         subject: @ndreux
         plannedOn: <(new DateTime('2015-11-11'))>
 
+    qvignierWithNdecraene1:
+        host: @qvignier
+        subject: @ndecraene
+        plannedOn: <(new DateTime('2015-09-30'))>
+
+    qvignierWithNdecraene2:
+        host: @qvignier
+        subject: @ndecraene
+        plannedOn: <(new DateTime('2015-10-14'))>
+
+    qvignierWithNdecraene3:
+        host: @qvignier
+        subject: @ndecraene
+        plannedOn: <(new DateTime('2015-10-28'))>
+
+    qvignierWithNdecraene4:
+        host: @qvignier
+        subject: @ndecraene
+        plannedOn: <(new DateTime('2015-11-11'))>
+
     jpierrontWithQvignier1:
         host: @jpierront
         subject: @qvignier

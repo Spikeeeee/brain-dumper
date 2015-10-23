@@ -36,7 +36,7 @@ class One2OneRepository extends EntityRepository
         $queryBuilder->where('one_2_one.host = :hostId');
         $queryBuilder->setParameter('hostId', $user->getId());
 
-        $queryBuilder->orderBy('one_2_one.host');
+        $queryBuilder->orderBy('one_2_one.subject');
         $queryBuilder->addOrderBy('one_2_one.plannedOn');
 
         return $queryBuilder->getQuery()->getResult();
@@ -47,7 +47,7 @@ class One2OneRepository extends EntityRepository
      *
      * @return One2One[]
      */
-    public function getSubjectForCurrentUser(User $user)
+    public function getInvitedForCurrentUser(User $user)
     {
         $queryBuilder = $this->getQueryBuilder();
 

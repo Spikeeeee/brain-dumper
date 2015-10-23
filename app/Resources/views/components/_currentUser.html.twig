@@ -1,9 +1,9 @@
-<div class="mdl-grid">
+<div class="user-overview mdl-grid">
     <div class="avatar">
-        <img src="{{ asset('images/avatar/placeholder-man.png') }}" />
+        <img src="{{ asset(app.user.avatar) }}" />
     </div>
 
-    <div class="user-information">
+    <div class="information">
         <span class="username">{{ app.user.username }}</span>
     </div>
 </div>

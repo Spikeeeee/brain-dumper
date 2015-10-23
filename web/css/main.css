@@ -9,23 +9,41 @@ a {
 
 /**
  *
- * TEXT-ALIGN
+ * TEXT
  *
  */
 .text-center {
     text-align: center;
 }
-
 .text-left {
     text-align: left;
 }
-
 .text-right {
     text-align: right;
 }
-
 .text-justify {
     text-align: justify;
+}
+
+.text-style-bold {
+    font-weight: 700;
+}
+.text-style-italic {
+    font-style: italic;
+}
+
+/**
+ *
+ * LIST
+ *
+ */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.list-inline li {
+     display: inline;
 }
 
 /**
@@ -53,6 +71,71 @@ a {
     margin: 1em;
 }
 
+.margin-top-none {
+    margin-top: 0;
+}
+
+.margin-right-none {
+    margin-right: 0;
+}
+
+.margin-bottom-none {
+    margin-bottom: 0;
+}
+
+.margin-left-none {
+    margin-left: 0;
+}
+
+.margin-none {
+    margin: 0;
+}
+
+/**
+ *
+ * PADDING
+ *
+ */
+.padding-top {
+    padding-top: 1em;
+}
+
+.padding-right {
+    padding-right: 1em;
+}
+
+.padding-bottom {
+    padding-bottom: 1em;
+}
+
+.padding-left {
+    padding-left: 1em;
+}
+
+.padding {
+    padding: 1em;
+}
+
+.padding-top-none {
+    padding-top: 0;
+}
+
+.padding-right-none {
+    padding-right: 0;
+}
+
+.padding-bottom-none {
+    padding-bottom: 0;
+}
+
+.padding-left-none {
+    padding-left: 0;
+}
+
+.padding-none {
+    padding: 0;
+}
+
 /**
  *
  * LAYOUT
@@ -60,21 +143,6 @@ a {
  */
 #main-header a {
     color: grey;
-}
-
-#current-user .avatar {
-    width: 30%;
-}
-#current-user .avatar img {
-    width: 100%;
-    border-radius: 50%;
-}
-
-#current-user .user-information {
-    padding: 0.75em 0 0 1em;
-}
-#current-user .user-information .username {
-    font-weight: 700;
 }
 
 /**
@@ -86,4 +154,34 @@ a {
     margin: 0;
     padding: 0;
     font-size: 1em;
+}
+
+/**
+ *
+ * USER OVERVIEW
+ *
+ */
+.user-overview {
+    width: 100%;
+}
+.user-overview .avatar {
+    width: 30%;
+}
+.user-overview .avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+.user-overview .information {
+    padding: 0.75em 0 0 1em;
+    width: 70%;
+}
+.user-overview .information .username {
+    font-weight: 700;
+}
+
+.user-overview.user-overview-card {
+    margin: 1.5em
+}
+.user-overview.user-overview-card .information{
+    width: 55%;
 }

@@ -13,6 +13,13 @@ BrainDumper\Bundle\UserBundle\Entity\User:
         plainPassword: azerty
         team: @fbo
 
+    ndecraene:
+        username: ndecraene
+        email: nelly.decraene@cmcm.com
+        enabled: true
+        plainPassword: azerty
+        team: @fbo
+
     dbutton:
         username: dbutton
         email: damien.button@cmcm.com
